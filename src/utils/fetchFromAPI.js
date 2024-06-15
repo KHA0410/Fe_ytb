@@ -97,11 +97,11 @@ axios.interceptors.response.use(
           localStorage.setItem("LOGIN_USER", res.data);
         })
         .catch((err) => {
-          console.log(err);
-          localStorage.removeItemItem("LOGIN_USER");
+          // console.log(err);
+          // localStorage.removeItemItem("LOGIN_USER");
         })
         .finally(() => {
-          window.location.reload();
+          // window.location.reload();
         });
     }
     return Promise.reject(err);

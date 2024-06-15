@@ -8,6 +8,7 @@ import { jwtDecode } from "jwt-decode";
 const Navbar = () => {
   let userLogin = localStorage.getItem("LOGIN_USER");
 
+  let user = userLogin ? jwtDecode(userLogin) : "";
   return (
     <Stack
       direction="row"
@@ -32,6 +33,7 @@ const Navbar = () => {
         </div>
 
         <div className="dropdown" hidden={userLogin ? false : true}>
+          <h1 className="text-white">{user && user.fullName}</h1>
           <Avatar
             type="button"
             data-bs-toggle="dropdown"
